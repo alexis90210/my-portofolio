@@ -12,7 +12,7 @@
             alt=""
             srcset=""
           />
-          <span class="is-bold pl-4"> SOLU-IT </span>
+          <span class="is-bold pl-4 is-hidden-mobile"> SOLU-IT </span>
         </div>
 
         <div class="is-flex p-0 is-align-items-center">
@@ -51,7 +51,7 @@
               mes <b class="has-text-dark">compétences</b> au service de vos
               besoins dans divers domaines.
             </p>
-            <b-button class="is-bg-red p-3 px-5 has-text-light mt-5"
+            <b-button @click="mailto()" class="is-bg-red p-3 px-5 has-text-light mt-5"
               >Prendre contact</b-button
             >
           </div>
@@ -121,7 +121,7 @@
                   v-model="nuxt"
                   true-value="1"
                   false-value="0"
-                  >NUXT</b-checkbox
+                  >NUXT(VUEJS)</b-checkbox
                 >
                 <b-checkbox
                   size="is-small"
@@ -129,7 +129,15 @@
                   v-model="flutter"
                   true-value="1"
                   false-value="0"
-                  >FLUTTER</b-checkbox
+                  >FLUTTER (DART)</b-checkbox
+                >
+                <b-checkbox
+                  size="is-small"
+                  type="is-danger"
+                  v-model="angular"
+                  true-value="1"
+                  false-value="0"
+                  >ANGULAR</b-checkbox
                 >
               </div>
             </div>
@@ -279,6 +287,31 @@
             </div>
           </div>
 
+
+           <!-- APP MOBILE HFINANCE -->
+
+           <div class="is-box-4 navlink">
+            <div class="box p-0 mt-6">
+              <img
+                src="@/assets/hfinance.png"
+                style="border-radius: 10px"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="is-flex is-justify-content-space-between is-zoom">
+              <b>HFINANCE</b>
+              <p class="is-size-7 box p-1 is-red has-text-light px-3">
+                PERSONNALISÉ
+              </p>
+            </div>
+            <div class="is-flex is-justify-content-space-between is-zoom">
+              <p class="has-text-grey is-size-8 mt-2">
+                Application mobile de gestion de poche et tontines
+              </p>
+            </div>
+          </div>
+
           <!-- FRAIS SCOLAIRE -->
 
           <div class="is-box-4 navlink" v-if="perso == 1 || nuxt == 1">
@@ -352,6 +385,8 @@
             </div>
           </div>
 
+          
+
           <!-- LEKOL -->
 
           <div class="is-box-4 navlink" v-if="electron == 1 || nuxt == 1">
@@ -376,6 +411,56 @@
               </p>
             </div>
           </div>
+
+           <!-- RAPPPORT -->
+
+           <div class="is-box-4 navlink">
+            <div class="box p-0 mt-6">
+              <img
+                src="@/assets/rapport.png"
+                style="border-radius: 10px"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="is-flex is-justify-content-space-between is-zoom">
+              <b>RAPPORT CYB</b>
+              <p class="is-size-7 box p-1 is-red has-text-light px-3">
+                PERSONNALISÉ
+              </p>
+            </div>
+            <div class="is-flex is-justify-content-space-between is-zoom">
+              <p class="has-text-grey is-size-8 mt-2">
+                RAPPORT CY est un système complet pour la gestion des rapports des agents de votre entreprise
+            
+              </p>
+            </div>
+          </div>
+
+           <!-- APP MOBILE FLASH -->
+
+           <div class="is-box-4 navlink">
+            <div class="box p-0 mt-6">
+              <img
+                src="@/assets/Flash-app.png"
+                style="border-radius: 10px"
+                alt=""
+                srcset=""
+              />
+            </div>
+            <div class="is-flex is-justify-content-space-between is-zoom">
+              <b>FLASH</b>
+              <p class="is-size-7 box p-1 is-red has-text-light px-3">
+                PERSONNALISÉ
+              </p>
+            </div>
+            <div class="is-flex is-justify-content-space-between is-zoom">
+              <p class="has-text-grey is-size-8 mt-2">
+                Application mobile de gestion des preinscriptions  a la  Faculté des Lettres, Arts et Sciences Humaines (FLASH)
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </div>
@@ -539,7 +624,18 @@
              <div class="py-3">
                 <i class="mdi mdi-github is-red "></i>
             <span class="is-bold is-size-8">GITHUB</span>
-            <p class="is-size-7">@alexis90210</p>
+            <p class="is-size-7">@alexis90210 <a href="https://github.com/alexis90210"> <i class="mdi mdi-link"></i></a></p>
+            <hr class="dropdown-divider" />
+            </div>
+
+             <!-- WAKATIME SINCE -->
+             <div class="py-3">
+                <i class="mdi mdi-github is-red "></i>
+            <span class="is-bold is-size-8">WAKATIME since 20/09/2022</span>
+            <p class="is-size-7 py-2">
+              <a href="https://wakatime.com/@Hisoka_tegiro" class="has-text-dark"> @Hisoka_tegiro(Alexis Ngoyi)</a>
+             </p>
+            <a href="https://wakatime.com/@87ba5400-e128-4aec-a89d-85310b743b49"><img src="https://wakatime.com/badge/user/87ba5400-e128-4aec-a89d-85310b743b49.svg" alt="Total time coded since Sep 20 2022" /></a>
             <hr class="dropdown-divider" />
             </div>
 
@@ -573,6 +669,7 @@
             </p>
                  <div class="go-right">
                     <b-button class="is-bg-red p-3 px-5 has-text-light mt-5"
+                    @click="mailto()"
               >Prendre contact</b-button
             >
                  </div>
@@ -588,7 +685,7 @@
     <div class="columns has-background-dark px-4 py-5 mt-5 add-clip">
         <div class="go-right">
             <p class="is-bold has-text-light is-size-7 px-5">
-                ALEXIS NGOYI  - COPYRIGHT © 2017 - 2022
+                ALEXIS NGOYI  - COPYRIGHT © 2017 - {{new Date().getFullYear()}}
             </p>
         </div>
     </div>
@@ -606,9 +703,24 @@ export default {
       maintenance: 1,
       electron: 1,
       nuxt: 1,
+      angular:1,
       flutter: 1,
     };
   },
+  methods:{
+    mailto() {
+      this.$buefy.dialog.alert({
+        title:'ALERTE',
+        message:'Nous vous redirigeons vers votre application de mail par default, veuillez patienter svp',
+        type:'is-warning',
+        hasIcon:true
+      })
+
+      var a = document.createElement('a')
+      a.href= 'mailto:alexisng90210@gmail.com?subject=MESSAGE PROVENANT DU PORTFOLIO'
+      a.click()
+    }
+  }
 };
 </script>
 
@@ -691,7 +803,14 @@ export default {
 
 .add-clip{
   background-color: rgb(221, 61, 51) !important;
+}
 
-
+@media screen and (max-width:700px) {
+  .is-box-4 {
+  width: 90%;
+}
+.is-hidden-mobile {
+  display:none
+}  
 }
 </style>
